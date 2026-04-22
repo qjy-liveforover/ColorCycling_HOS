@@ -1,0 +1,108 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Color Cycling Application for HarmonyOS 6"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Color Cycling Application"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ColorCyclingHOS"
+    },
+    {
+      "name": "app_name",
+      "value": "ColcorCyclingHOS"
+    },
+    {
+      "name": "frequency_label",
+      "value": "Speed"
+    },
+    {
+      "name": "brightness_label",
+      "value": "Brightness"
+    },
+    {
+      "name": "all_on",
+      "value": "All On"
+    },
+    {
+      "name": "normal_cycle",
+      "value": "Normal"
+    },
+    {
+      "name": "reverse_cycle",
+      "value": "Reverse"
+    },
+    {
+      "name": "hide_panel",
+      "value": "Hide"
+    },
+    {
+      "name": "show_panel",
+      "value": "Show"
+    },
+    {
+      "name": "color_purple",
+      "value": "Purple"
+    },
+    {
+      "name": "color_blue",
+      "value": "Blue"
+    },
+    {
+      "name": "color_cyan",
+      "value": "Cyan"
+    },
+    {
+      "name": "color_green",
+      "value": "Green"
+    },
+    {
+      "name": "color_yellow",
+      "value": "Yellow"
+    },
+    {
+      "name": "color_orange",
+      "value": "Orange"
+    },
+    {
+      "name": "color_red",
+      "value": "Red"
+    },
+    {
+      "name": "color_white",
+      "value": "White"
+    },
+    {
+      "name": "drag_to_reorder",
+      "value": "Drag to reorder"
+    },
+    {
+      "name": "toggle_color",
+      "value": "Toggle"
+    },
+    {
+      "name": "current_color",
+      "value": "Current"
+    },
+    {
+      "name": "pause",
+      "value": "Pause"
+    },
+    {
+      "name": "resume",
+      "value": "Resume"
+    },
+    {
+      "name": "color_sequence",
+      "value": "Sequence"
+    },
+    {
+      "name": "color_controls",
+      "value": "Controls"
+    }
+  ]
+}

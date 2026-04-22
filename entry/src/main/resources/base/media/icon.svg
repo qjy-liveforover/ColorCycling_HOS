@@ -1,0 +1,41 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 环形彩虹图标 - 无文字 -->
+  <defs>
+    <!-- 彩虹渐变 - 按彩虹顺序 -->
+    <linearGradient id="rainbow1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0000"/>
+      <stop offset="20%" style="stop-color:#FF8000"/>
+      <stop offset="40%" style="stop-color:#FFFF00"/>
+      <stop offset="60%" style="stop-color:#00FF00"/>
+      <stop offset="80%" style="stop-color:#00FFFF"/>
+      <stop offset="100%" style="stop-color:#FF00FF"/>
+    </linearGradient>
+    <linearGradient id="rainbow2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF00FF"/>
+      <stop offset="20%" style="stop-color:#0000FF"/>
+      <stop offset="40%" style="stop-color:#00FFFF"/>
+      <stop offset="60%" style="stop-color:#00FF00"/>
+      <stop offset="80%" style="stop-color:#FFFF00"/>
+      <stop offset="100%" style="stop-color:#FF0000"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景圆 -->
+  <circle cx="256" cy="256" r="240" fill="#1a1a2e"/>
+  
+  <!-- 外环 - 主彩虹环 -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#rainbow1)" stroke-width="50"/>
+  
+  <!-- 中环 -->
+  <circle cx="256" cy="256" r="130" fill="none" stroke="url(#rainbow2)" stroke-width="35"/>
+  
+  <!-- 内环 -->
+  <circle cx="256" cy="256" r="75" fill="none" stroke="url(#rainbow1)" stroke-width="20"/>
+  
+  <!-- 中心光点 -->
+  <circle cx="256" cy="256" r="30" fill="url(#rainbow1)" opacity="0.8"/>
+  
+  <!-- 装饰光晕 -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#rainbow1)" stroke-width="3" opacity="0.5"/>
+  <circle cx="256" cy="256" r="90" fill="none" stroke="url(#rainbow2)" stroke-width="2" opacity="0.4"/>
+</svg>

@@ -1,0 +1,72 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "pure_purple",
+      "value": "#8000FF"
+    },
+    {
+      "name": "pure_blue",
+      "value": "#0000FF"
+    },
+    {
+      "name": "pure_cyan",
+      "value": "#00FFFF"
+    },
+    {
+      "name": "pure_green",
+      "value": "#00FF00"
+    },
+    {
+      "name": "pure_yellow",
+      "value": "#FFFF00"
+    },
+    {
+      "name": "pure_orange",
+      "value": "#FF8000"
+    },
+    {
+      "name": "pure_red",
+      "value": "#FF0000"
+    },
+    {
+      "name": "pure_white",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "control_panel_bg",
+      "value": "#1A1A1A"
+    },
+    {
+      "name": "control_button_bg",
+      "value": "#333333"
+    },
+    {
+      "name": "control_button_text",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "slider_track",
+      "value": "#4A4A4A"
+    },
+    {
+      "name": "slider_selected",
+      "value": "#007DFF"
+    },
+    {
+      "name": "switch_on",
+      "value": "#007DFF"
+    },
+    {
+      "name": "switch_off",
+      "value": "#666666"
+    },
+    {
+      "name": "drag_handle",
+      "value": "#FF9800"
+    }
+  ]
+}
