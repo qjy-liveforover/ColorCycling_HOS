@@ -119,6 +119,21 @@ ColorCycling_HOS/
 
 ## FAQ
 
+### Q: Install Failed: error: failed to install bundle. code:9568332 error: install sign info inconsistent?
+
+A: This error occurs when an app with the same bundle name is already installed on the device with a different signature.
+
+**Solution**: Uninstall the existing app first:
+
+```bash
+# Method 1: HDC command
+hdc shell bm uninstall -n com.qjy.oneapplication
+
+# Method 2: On device - long press app icon and select Uninstall
+```
+
+After uninstalling, run the project again. See [SIGNING_CONFIG.md](./SIGNING_CONFIG.md) for more details.
+
 ### Q: Signing error when running?
 
 A: Please follow the [Configure Signing](#3-configure-signing-required) steps and try again.

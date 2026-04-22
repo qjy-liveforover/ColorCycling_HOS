@@ -1,24 +1,56 @@
-# 签名配置说明
+# Signing Configuration Guide
 
-本项目已移除签名配置信息以保护隐私。在运行项目前，您需要配置自己的签名。
+This project has removed signing configuration to protect privacy. You **MUST** configure your own signing before running the project.
 
-## 配置步骤
+## ⚠️ Common Error: Install Failed (code:9568332)
 
-### 方法一：自动签名（推荐）
+If you see this error:
+```
+Install Failed: error: failed to install bundle.
+code:9568332
+error: install sign info inconsistent.
+```
 
-1. 使用 DevEco Studio 打开项目
-2. 点击菜单 `File` → `Project Structure` → `Project` → `Signing Configs`
-3. 勾选 `Automatically generate signature`
-4. 点击 `OK` 保存
-5. DevEco Studio 会自动生成签名并更新 `build-profile.json5`
+**Cause**: The app with the same bundle name is already installed on the device with a different signature.
 
-### 方法二：手动签名
+**Solution**: Uninstall the existing app first, then reinstall:
 
-如果您已有签名证书，请按以下步骤配置：
+### Method 1: Uninstall via DevEco Studio
+1. In DevEco Studio, right-click the connected device
+2. Select `Uninstall Application`
+3. Or use the terminal command below
 
-1. 打开 `build-profile.json5` 文件
-2. 找到 `signingConfigs` 部分
-3. 填写以下信息：
+### Method 2: Uninstall via HDC Command
+```bash
+hdc shell bm uninstall -n com.qjy.oneapplication
+```
+
+### Method 3: Uninstall on Device
+1. Long press the app icon on the device
+2. Select `Uninstall`
+3. Confirm the uninstallation
+
+After uninstalling, run the project again.
+
+---
+
+## Configuration Steps
+
+### Method 1: Automatic Signing (Recommended)
+
+1. Open project in **DevEco Studio**
+2. Click `File` → `Project Structure` → `Project` → `Signing Configs`
+3. Check ✅ `Automatically generate signature`
+4. Click `OK` to save
+5. DevEco Studio will automatically generate signing and update `build-profile.json5`
+
+### Method 2: Manual Signing
+
+If you have existing signing certificates, follow these steps:
+
+1. Open `build-profile.json5` file
+2. Find the `signingConfigs` section
+3. Fill in the following information:
 
 ```json5
 {
@@ -28,13 +60,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "您的证书路径(.cer)",
-          "keyAlias": "密钥别名",
-          "keyPassword": "密钥密码",
-          "profile": "配置文件路径(.p7b)",
+          "certpath": "your_certificate_path.cer",
+          "keyAlias": "your_key_alias",
+          "keyPassword": "your_key_password",
+          "profile": "your_profile_path.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "密钥库文件路径(.p12)",
-          "storePassword": "密钥库密码"
+          "storeFile": "your_keystore_path.p12",
+          "storePassword": "your_keystore_password"
         }
       }
     ]
@@ -42,8 +74,40 @@
 }
 ```
 
-## 注意事项
+## Important Notes
 
-- 签名文件（.p12, .cer, .p7b）包含敏感信息，请勿上传到公开仓库
-- 自动生成的签名文件通常位于 `C:\Users\{用户名}\.ohos\config\` 目录
-- 如果只是本地调试，推荐使用自动签名方式
+- **Never upload** signing files (.p12, .cer, .p7b) to public repositories
+- Auto-generated signing files are typically located at `C:\Users\{username}\.ohos\config\`
+- For local debugging, automatic signing is recommended
+- Each developer must configure their own signing - do not share signing files
+
+## Troubleshooting
+
+### Error: "sign info inconsistent"
+- **Cause**: App with same bundle name exists on device with different signature
+- **Solution**: Uninstall existing app first, then reinstall
+
+### Error: "signing config not found"
+- **Cause**: Signing not configured
+- **Solution**: Follow automatic signing steps above
+
+### Error: "certificate expired"
+- **Cause**: Debug certificate expired (valid for 1 year)
+- **Solution**: Delete old certificate and regenerate via automatic signing
+
+### Error: "bundle name already exists"
+- **Cause**: Different app with same bundle name installed
+- **Solution**: Uninstall the conflicting app or change bundle name in `app.json5`
+
+## Quick Fix Commands
+
+```bash
+# Uninstall app from device
+hdc shell bm uninstall -n com.qjy.oneapplication
+
+# Check if app is installed
+hdc shell bm dump -n com.qjy.oneapplication
+
+# List all installed packages
+hdc shell bm dump -a
+```
